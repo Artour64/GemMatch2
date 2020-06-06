@@ -1,0 +1,45 @@
+/** The supernova gem is created when six gems are matched in a row.
+ * It combines the effects of the star gem and the power gem.
+ */
+
+public class SuperNovaGem extends Gem {
+  public static int value=10;
+  public SuperNovaGem() { 
+    
+  }
+  
+  public int value(){
+    return value;
+  }
+  
+  public SuperNovaGem(int color) { 
+    super(color);
+  }
+  
+  public String image(){
+    return styles[style]+"/"+colorNames[color]+"SupernovaGem.png";
+  }
+  
+  public int pop(Square[][] grid,boolean[][] disapearMap,int x,int y,int colorTrigger){
+    int count=new StarGem(color).pop(grid,disapearMap,x,y,colorTrigger);
+    try{
+      count+=new StarGem(color).pop(grid,disapearMap,x+1,y+1,colorTrigger);
+    }catch(Exception e){
+      try{
+        count+=new StarGem(color).pop(grid,disapearMap,x+1,y,colorTrigger);
+      }catch(Exception a){
+        
+      }
+    }
+    try{
+      count+=new StarGem(color).pop(grid,disapearMap,x-1,y-1,colorTrigger);
+    }catch(Exception e){
+      try{
+        count+=new StarGem(color).pop(grid,disapearMap,x-1,y,colorTrigger);
+      }catch(Exception a){
+        
+      }
+    }
+    return count;
+  }
+}

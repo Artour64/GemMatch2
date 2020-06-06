@@ -1,0 +1,11 @@
+public class Square {
+  Gem gem;
+  
+  public Square() { 
+    
+  }
+  
+  public static void main(String[] args) { 
+    
+  }
+}

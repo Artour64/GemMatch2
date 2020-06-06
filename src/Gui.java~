@@ -1,0 +1,38 @@
+import javax.swing.*;
+//import java.awt.*;
+public class Gui {
+  public static JPanel mainMenu=mainMenu();
+  
+  public static class Window extends JFrame{
+    JPanel panel;
+    public Window(){
+      super();
+      setVisible(true);
+      setSize(200,200);
+    }
+    
+    public void add(JPanel panel){
+      this.panel=panel;
+      super.add(panel);
+    }
+  }
+  
+  public static void sampleMethod(){
+    System.out.println("Red");
+  }
+  
+  public static JPanel mainMenu(){
+    JPanel menu=new JPanel();
+    menu.add(new JLabel("Gem Match"));
+    return menu;
+  }
+  
+  public static void windowAdd(Window window, JPanel panel){
+    window.add(panel);
+  }
+  
+  public static void main(String[] args) { 
+    Window window=new Window();
+    window.add(mainMenu());
+  }
+}

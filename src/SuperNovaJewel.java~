@@ -1,0 +1,16 @@
+/**
+ * Auto Generated Java Class.
+ */
+public class SuperNovaJewel extends Gem {
+  
+  public SuperNovaJewel() { 
+    /* YOUR CONSTRUCTOR CODE HERE*/
+  }
+  
+  public static void main(String[] args) { 
+    
+  }
+  
+  /* ADD YOUR CODE HERE */
+  
+}
